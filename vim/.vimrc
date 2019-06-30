@@ -2,8 +2,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-let g:material_theme_style = 'dark'
-
 call plug#begin('~/.vim/plugged')
 
   Plug 'terryma/vim-multiple-cursors'
@@ -24,15 +22,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'ErichDonGubler/vim-sublime-monokai'
   Plug 'tjammer/blayu.vim'
   Plug 'haishanh/night-owl.vim'
+  Plug 'kien/ctrlp.vim'
 
 " Initialize plugin system
 call plug#end()
 
+colorscheme spacegray
 set background=dark
 syntax enable
-
-colorscheme night-owl
-
 set number
 set syntax=whitespace
 set redrawtime=10000
@@ -55,7 +52,6 @@ inoremap <c-s> <Esc>:w<CR>l # insert mode: escape to normal and save
 vnoremap <c-s> <Esc>:w<CR> # visual mode: escape to normal and save
 
 nmap <F8> :TagbarToggle<CR>
-
 map <C-o> :NERDTreeToggle<CR>
 
 let g:user_emmet_leader_key=','

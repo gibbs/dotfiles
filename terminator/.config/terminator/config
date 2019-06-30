@@ -24,5 +24,5 @@
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#aaaaaa"
-    font = IBM Plex Mono 15
+    font = IBM Plex Mono 14
     use_system_font = False
