@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPOSITORY="~/git/work/devenv/"
+REPOSITORY="${HOME}/git/work/devenv/"
 PROXY_CONTAINER="proxy"
 
 # Run
