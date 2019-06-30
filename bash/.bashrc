@@ -48,12 +48,6 @@ stty -ixon
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
-
-# Path to the bash it configuration
-export BASH_IT="~/.bash_it"
-
-# Load Bash It
-source "$BASH_IT"/bash_it.sh
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 # NVM

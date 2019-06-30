@@ -1,0 +1,28 @@
+[global_config]
+  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+  title_font = Noto Sans Mono Medium 12
+  title_inactive_bg_color = "#2e3436"
+  title_inactive_fg_color = "#888a85"
+  title_transmit_bg_color = "#4e9a06"
+  title_transmit_fg_color = "#8ae234"
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.54
+    background_type = transparent
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    font = IBM Plex Mono 15
+    use_system_font = False
