@@ -52,6 +52,13 @@ markup=pango
 interval=persist
 separator_block_width=20
 
+[volume]
+command=~/.config/i3blocks/contrib/volume/volume
+label=
+instance=Master
+interval=once
+signal=10
+
 [battery2]
 command=~/.config/i3blocks/contrib/battery2/battery2 #run batterybar -h for options
 label=
