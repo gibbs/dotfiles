@@ -26,6 +26,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'ap/vim-css-color'
+  Plug 'tpope/vim-surround'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'w0rp/ale'
+  Plug 'zoeesilcock/vim-caniuse'
+  Plug 'scrooloose/nerdcommenter'
 
 " Initialize plugin system
 call plug#end()
