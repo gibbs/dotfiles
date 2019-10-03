@@ -205,6 +205,8 @@ bar {
     font pango:IBM Plex Mono Medium 10
     position top
     height 24
+    mode hide
+
 
 	colors {
         background $bg-color

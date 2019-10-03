@@ -96,8 +96,6 @@ WINDOW_ICONS = {
     'slic3r.pl': fa.icons['cube'],
     'spotify': fa.icons['music'],  # could also use the 'spotify' icon
     'steam': fa.icons['steam'],
-    'subl': fa.icons['file-alt'],
-    'subl3': fa.icons['file-alt'],
     'sublime_text': fa.icons['file-alt'],
     'thunar': fa.icons['copy'],
     'thunderbird': fa.icons['envelope'],
@@ -110,11 +108,13 @@ WINDOW_ICONS = {
     'zoom': fa.icons['comment'],
     'terminator': fa.icons['terminal'],
     'dbeaver': fa.icons['database'],
-    'firefox-developer-edition': fa.icons['firefox'],
+    'firefoxdeveloperedition': fa.icons['firefox'],
     'files': fa.icons['copy'],
-    'hamster': fa.icons['user-clock'],
+    'Hamster-windows-service': fa.icons['user-clock'],
+    'Hamster': fa.icons['user-clock'],
     'geary': fa.icons['envelope'],
     'insomnia': fa.icons['network-wired'],
+    'libreoffice-calc': fa.icons['chart-pie'],
 }
 
 # This icon is used for any application not in the list above
