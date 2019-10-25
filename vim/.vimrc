@@ -2,6 +2,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" Plugins
 call plug#begin('~/.vim/plugged')
 
   Plug 'terryma/vim-multiple-cursors'
@@ -25,28 +26,34 @@ call plug#begin('~/.vim/plugged')
   Plug 'kien/ctrlp.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  "Plug 'ap/vim-css-color'
   Plug 'shmargum/vim-sass-colors'
   Plug 'tpope/vim-surround'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'zoeesilcock/vim-caniuse'
   Plug 'scrooloose/nerdcommenter'
   Plug 'rodjek/vim-puppet'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'pablopunk/native-sidebar.vim'
+  Plug 'wincent/terminus'
+  Plug 'tobyS/pdv'
+  Plug 'bronson/vim-crosshairs'
+  Plug 'ericbn/vim-relativize'
+
+  " PHP
+  Plug '2072/PHP-Indenting-for-VIm'
 
 " Initialize plugin system
 call plug#end()
 
-colorscheme spacegray
+colorscheme one
 set background=dark
+set relativenumber
 syntax enable
 set number
 set syntax=whitespace
 set redrawtime=10000
 
-highlight ColorColumn ctermbg=1 guibg=grey15
+hi Normal guibg=NONE ctermbg=NONE
+highlight ColorColumn ctermbg=1 guibg=#2c323c
 let &colorcolumn="80,120"
 
 set tabstop=2
@@ -59,6 +66,7 @@ set list
 set lcs+=space:·
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set cursorline
+set cursorcolumn
 set autoindent
 
 nnoremap <c-s> :w<CR> # normal mode: save
@@ -71,7 +79,7 @@ map <C-o> :NERDTreeToggle<CR>
 " plugin key bindings
 let g:native_sidebar_shortcut = '<c-t>'
 
-" let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key=','
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|web/node_modules\|modules'
 let g:tagbar_width = 40
 let g:airline#extensions#tabline#enabled = 1
@@ -81,7 +89,7 @@ let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 
 " unicode symbols
@@ -107,35 +115,20 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-" Command for git grep
-" - fzf#vim#grep(command, with_column, [options], [fullscreen])
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 
-" Override Colors command. You can safely do this in your .vimrc as fzf.vim
-" will not override existing commands.
 command! -bang Colors
   \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
-" Augmenting Ag command using fzf#vim#with_preview function
-"   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
-"     * For syntax-highlighting, Ruby and any of the following tools are required:
-"       - Bat: https://github.com/sharkdp/bat
-"       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
-"       - CodeRay: http://coderay.rubychan.de/
-"       - Rouge: https://github.com/jneen/rouge
-"
-"   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
-"   :Ag! - Start fzf in fullscreen and display the preview window above
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 
-" Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
@@ -143,7 +136,6 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-" Likewise, Files command with preview window
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 

@@ -205,7 +205,6 @@ bar {
     font pango:IBM Plex Mono Medium 10
     position top
     height 24
-    mode hide
 
 
 	colors {
@@ -270,7 +269,7 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets --password-store=gnome
-exec --no-startup-id "compton -cC"
+exec --no-startup-id "compton"
 exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "sleep 2s && kalu"
