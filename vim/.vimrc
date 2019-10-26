@@ -1,49 +1,54 @@
+" True colour support
 if (has("termguicolors"))
   set termguicolors
 endif
 
-" Plugins
+" Plug Plugin Manager
 call plug#begin('~/.vim/plugged')
 
+  " IDE
   Plug 'terryma/vim-multiple-cursors'
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'scrooloose/nerdtree'
-  Plug 'itchyny/lightline.vim'
-  Plug 'mattn/emmet-vim'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'rakr/vim-one'
-  Plug 'majutsushi/tagbar'
-  Plug 'flazz/vim-colorschemes'
   Plug 'Yggdroot/indentLine'
-  Plug 'severin-lemaignan/vim-minimap'
-  Plug 'dracula/vim'
-  Plug 'kaicataldo/material.vim'
-  Plug 'liuchengxu/space-vim-theme'
-  Plug 'SolomonSklash/vim-snazzy'
-  Plug 'ErichDonGubler/vim-sublime-monokai'
-  Plug 'tjammer/blayu.vim'
-  Plug 'haishanh/night-owl.vim'
   Plug 'kien/ctrlp.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'shmargum/vim-sass-colors'
-  Plug 'tpope/vim-surround'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'rodjek/vim-puppet'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'bronson/vim-crosshairs'
   Plug 'pablopunk/native-sidebar.vim'
   Plug 'wincent/terminus'
-  Plug 'tobyS/pdv'
-  Plug 'bronson/vim-crosshairs'
+  Plug 'tpope/vim-surround'
   Plug 'ericbn/vim-relativize'
+  Plug 'godlygeek/tabular'
+  
+  " UI
+  Plug 'itchyny/lightline.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'majutsushi/tagbar'
 
-  " PHP
+  " VCS
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'airblade/vim-gitgutter'
+
+  " Themes
+  Plug 'flazz/vim-colorschemes'
+  Plug 'dracula/vim'
+  Plug 'kaicataldo/material.vim'
+  Plug 'liuchengxu/space-vim-theme'
+  Plug 'rakr/vim-one'
+  Plug 'tjammer/blayu.vim'
+  Plug 'haishanh/night-owl.vim'
+  Plug 'SolomonSklash/vim-snazzy'
+
+  " Language Support
+  Plug 'rodjek/vim-puppet'
+  Plug 'shmargum/vim-sass-colors'
+  Plug 'tobyS/pdv'
   Plug '2072/PHP-Indenting-for-VIm'
 
 " Initialize plugin system
 call plug#end()
 
+" UI Setup
 colorscheme one
 set background=dark
 set relativenumber
@@ -52,10 +57,14 @@ set number
 set syntax=whitespace
 set redrawtime=10000
 
-hi Normal guibg=NONE ctermbg=NONE
+" Rulers
 highlight ColorColumn ctermbg=1 guibg=#2c323c
 let &colorcolumn="80,120"
 
+" Transparent Background
+highlight Normal guibg=NONE ctermbg=NONE
+
+" Environment
 set tabstop=2
 set expandtab
 set shiftwidth=2
@@ -69,24 +78,23 @@ set cursorline
 set cursorcolumn
 set autoindent
 
-nnoremap <c-s> :w<CR> # normal mode: save
-inoremap <c-s> <Esc>:w<CR>l # insert mode: escape to normal and save
-vnoremap <c-s> <Esc>:w<CR> # visual mode: escape to normal and save
-
+" Tagbar
 nmap <F8> :TagbarToggle<CR>
-map <C-o> :NERDTreeToggle<CR>
+let g:tagbar_width = 40
 
-" plugin key bindings
+" Sidebar
 let g:native_sidebar_shortcut = '<c-t>'
 
+" Emmet
 let g:user_emmet_leader_key=','
+
+" CTRL P
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|web/node_modules\|modules'
-let g:tagbar_width = 40
+
+" Airline
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='onedark'
-
-" air-line
-let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

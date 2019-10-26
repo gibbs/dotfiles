@@ -1,0 +1,62 @@
+conky.config = {
+  -- Colors
+  default_color          = '#5294e2',
+  color1                 = '#57a2e3',
+  color2                 = '#3a4459',
+  color3                 = '#ffcc00',
+  color4                 = '#829aab',
+
+  -- Config
+  alignment              = 'top_right',
+  background             = false,
+  border_width           = 1,
+  cpu_avg_samples        = 2,
+  default_outline_color  = 'white',
+  default_shade_color    = 'white',
+  double_buffer          = true,
+  draw_borders           = false,
+  draw_graph_borders     = true,
+  draw_outline           = false,
+  draw_shades            = false,
+  extra_newline          = false,
+  font                   = 'IBM Plex Sans:size=9',
+  gap_x                  = 40,
+  gap_y                  = 35,
+  minimum_height         = 5,
+  minimum_width          = 5,
+  net_avg_samples        = 2,
+  no_buffers             = true,
+  out_to_console         = false,
+  out_to_ncurses         = false,
+  out_to_stderr          = false,
+  out_to_x               = true,
+  own_window             = true,
+  own_window_class       = 'Conky',
+  own_window_type        = 'override',
+  own_window_transparent = true,
+  show_graph_range       = false,
+  show_graph_scale       = false,
+  stippled_borders       = 0,
+  update_interval        = 5.0,
+  uppercase              = false,
+  use_spacer             = 'none',
+  use_xft                = true,
+  xinerama_head          = 0,
+}
+
+conky.text = [[
+${alignc}${color1}${font IBM Plex Sans:size=60}${time %H:%M}${font}
+${alignc}${color1}${font IBM Plex Sans:size=20}${time %d/%m/%Y}${font}
+
+${color4}${alignc}$uptime | $loadavg
+${color1}${hr}
+${color4}RAM Usage:$color1 $mem/$memmax - $memperc%
+${color4}${membar 4}
+Swap Usage:$color $swap/$swapmax - $swapperc%
+${color4}${swapbar 4}
+CPU Usage:$color $cpu%
+${color4}${cpubar 4}
+File systems: ${color1}
+${fs_used /}/${fs_size /}
+${color4}${fs_bar 6 /}
+]]
