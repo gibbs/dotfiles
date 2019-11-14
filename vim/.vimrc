@@ -153,3 +153,13 @@ command! -bang -nargs=* Rg
       \   <bang>0 ? fzf#vim#with_preview('up:60%')
       \           : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0)
+
+" Spaces to tabs
+function! Tabre()
+  let &l:tabstop=2
+  let &l:shiftwidth=2
+  set noexpandtab
+  retab!
+endfunction
+
+command! Tabre call Tabre()
