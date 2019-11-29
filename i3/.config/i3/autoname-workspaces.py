@@ -115,6 +115,8 @@ WINDOW_ICONS = {
     'geary': fa.icons['envelope'],
     'insomnia': fa.icons['network-wired'],
     'libreoffice-calc': fa.icons['chart-pie'],
+    'org.gnome.DejaDup': fa.icons['archive'],
+    'org.gnome.Nautilus': fa.icons['copy']
 }
 
 # This icon is used for any application not in the list above

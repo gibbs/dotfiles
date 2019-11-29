@@ -206,9 +206,9 @@ bar {
     modifier None
     hidden_state hide
     status_command i3blocks
-    font pango:IBM Plex Sans Medium 15
+    font pango:IBM Plex Sans Medium 11.5
     position top
-    height 40
+    height 26
 
 	colors {
         background $bg-color
