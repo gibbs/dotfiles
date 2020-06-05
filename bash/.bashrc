@@ -6,10 +6,11 @@
 [[ $- != *i* ]] && return
 
 # Exports
-export PATH="$PATH:/home/gibbs/.gem/ruby/2.6.0/bin:${HOME}/bin:$HOME/.config/composer/vendor/bin"
+export PATH="$PATH:/home/gibbs/.gem/ruby/2.6.0/bin:/home/gibbs/.gem/ruby/2.7.0/bin:${HOME}/bin:$HOME/.config/composer/vendor/bin:/home/gibbs/.local/bin"
 export ELECTRON_TRASH=gio
-export OP_SESSION_designamite="BWeK9pnDDOcFA9EjS9KSsP2hiSXH51jr7GIYyOvx488"
 export FBFONT=/usr/share/kbd/consolefonts/ter-216n.psf.gz
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/default
@@ -30,7 +31,7 @@ export BASH_IT="/home/gibbs/.bash_it"
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='pete'
+export BASH_IT_THEME='powerline-naked'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK

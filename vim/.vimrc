@@ -6,6 +6,8 @@ endif
 " Plug Plugin Manager
 call plug#begin('~/.vim/plugged')
 
+  Plug 'tpope/vim-pathogen'
+
   " IDE
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Yggdroot/indentLine'
@@ -28,41 +30,52 @@ call plug#begin('~/.vim/plugged')
   " VCS
   Plug 'editorconfig/editorconfig-vim'
   Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
 
   " Themes
-  Plug 'flazz/vim-colorschemes'
-  Plug 'dracula/vim'
-  Plug 'kaicataldo/material.vim'
-  Plug 'liuchengxu/space-vim-theme'
-  Plug 'rakr/vim-one'
-  Plug 'tjammer/blayu.vim'
-  Plug 'haishanh/night-owl.vim'
-  Plug 'SolomonSklash/vim-snazzy'
+  Plug 'connorholyday/vim-snazzy'
 
   " Language Support
   Plug 'rodjek/vim-puppet'
   Plug 'shmargum/vim-sass-colors'
   Plug 'tobyS/pdv'
   Plug '2072/PHP-Indenting-for-VIm'
+  Plug 'hashivim/vim-terraform'
+  Plug 'vim-syntastic/syntastic'
+
+  " Other
+  Plug 'freitass/todo.txt-vim'
 
 " Initialize plugin system
 call plug#end()
 
 " UI Setup
-colorscheme one
-set background=dark
+colorscheme snazzy
+"set t_Co=256
+"set background=dark
 set relativenumber
 syntax enable
 set number
 set syntax=whitespace
 set redrawtime=10000
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_phpmd_args = "~/.config/composer/vendor/designamite/src/ruleset-2.8.xml"
+
 " Rulers
-highlight ColorColumn ctermbg=1 guibg=#2c323c
+highlight ColorColumn ctermbg=1 guibg=#0a0a0a
 let &colorcolumn="80,120"
 
 " Transparent Background
-highlight Normal guibg=NONE ctermbg=NONE
+"highlight Normal guibg=NONE ctermbg=NONE
 
 " Environment
 set tabstop=2
@@ -94,7 +107,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|web/node_modules\|modules'
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='onedark'
+let g:airline_theme='lucius'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
