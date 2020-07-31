@@ -2,6 +2,5 @@
 __pycache__/
 *.py[cod]
 \#*#
-bin/bin/*-tunnel
 
 i3/.config/i3blocks/contrib/
