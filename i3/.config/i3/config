@@ -18,6 +18,8 @@ font pango:Droid Sans Mono 10
 # thin borders
 hide_edge_borders both
 
+title_align center
+
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
@@ -109,6 +111,16 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+bindsym $mod+KP_End workspace number 1
+bindsym $mod+KP_Down workspace number 2
+bindsym $mod+KP_Next workspace number 3
+bindsym $mod+KP_Left workspace number 4
+bindsym $mod+KP_Begin workspace number 5
+bindsym $mod+KP_Right workspace number 6
+bindsym $mod+KP_Home workspace number 7
+bindsym $mod+KP_Up workspace number 8
+bindsym $mod+KP_Prior workspace number 9
+bindsym $mod+KP_Insert workspace number 10
 
 # workspaces 11-20
 bindsym $mod+Control+1 workspace number 11
@@ -135,16 +147,16 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # use workspaces on different monitors
-workspace "1: P1" output eDP1
-workspace "2: P2" output eDP1
-workspace "3: P3" output eDP1
-workspace "4: P4" output eDP1
-workspace "5: P5" output eDP1
-workspace "6: S1" output HDMI1
-workspace "7: S2" output HDMI1
-workspace "8: S3" output HDMI1
-workspace "9: S4" output HDMI1
-workspace "10: S5" output HDMI1
+workspace "1 P1" output eDP1
+workspace "2 P2" output eDP1
+workspace "3 P3" output eDP1
+workspace "4 P4" output eDP1
+workspace "5 P5" output eDP1
+workspace "6 S1" output HDMI1
+workspace "7 S2" output HDMI1
+workspace "8 S3" output HDMI1
+workspace "9 S4" output HDMI1
+workspace "10 S5" output HDMI1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -188,16 +200,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #000000 
+set $bg-color            #000000
+set $active-bg-color     #0A0A0A
 set $inactive-bg-color   #000000
-set $text-color          #FFFF00
-set $inactive-text-color #999999
+set $text-color          #FFFFFF
+set $inactive-text-color #777777
 set $urgent-bg-color     #e53935
 set $indicator-color     #ff9900
 
 # set window colors
 #                       border             background         text                 indicator
-client.focused          $bg-color          $bg-color          $text-color          $indicator-color
+client.focused          $bg-color          $active-bg-color          $text-color          $indicator-color
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color

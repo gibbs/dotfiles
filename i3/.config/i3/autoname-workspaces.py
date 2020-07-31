@@ -65,9 +65,11 @@ WINDOW_ICONS = {
     'feh': fa.icons['image'],
     'file-roller': fa.icons['compress'],
     'filezilla': fa.icons['server'],
+    'firefoxdeveloperedition': fa.icons['firefox'],
     'firefox': fa.icons['firefox'],
     'firefox-esr': fa.icons['firefox'],
     'gimp-2.8': fa.icons['image'],
+    'gimp-2.10': fa.icons['image'],
     'gnome-control-center': fa.icons['toggle-on'],
     'gnome-terminal-server': fa.icons['terminal'],
     'google-chrome': fa.icons['chrome'],
@@ -110,13 +112,15 @@ WINDOW_ICONS = {
     'dbeaver': fa.icons['database'],
     'firefoxdeveloperedition': fa.icons['firefox'],
     'files': fa.icons['copy'],
-    'Hamster-windows-service': fa.icons['user-clock'],
-    'Hamster': fa.icons['user-clock'],
+    'hamster-windows-service': fa.icons['user-clock'],
+    'hamster': fa.icons['user-clock'],
     'geary': fa.icons['envelope'],
     'insomnia': fa.icons['network-wired'],
     'libreoffice-calc': fa.icons['chart-pie'],
     'org.gnome.DejaDup': fa.icons['archive'],
-    'org.gnome.Nautilus': fa.icons['copy']
+    'org.gnome.Nautilus': fa.icons['copy'],
+    'virtualbox manager': fa.icons['laptop'],
+    'virtualbox machine': fa.icons['laptop']
 }
 
 # This icon is used for any application not in the list above
