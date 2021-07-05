@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+git log --graph --decorate --oneline --pretty=format:'%C(auto)%h%d (%cr) %cn <%ce> %s'

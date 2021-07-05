@@ -6,14 +6,20 @@
 [[ $- != *i* ]] && return
 
 # Exports
-export PATH="$PATH:/home/gibbs/.gem/ruby/2.6.0/bin:/home/gibbs/.gem/ruby/2.7.0/bin:${HOME}/bin:$HOME/.config/composer/vendor/bin:/home/gibbs/.local/bin"
+export PATH="$PATH:${HOME}/.gem/ruby/2.7.2/bin:${HOME}/bin:$HOME/.config/composer/vendor/bin:${HOME}/.local/bin"
 export ELECTRON_TRASH=gio
 export FBFONT=/usr/share/kbd/consolefonts/ter-216n.psf.gz
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=1.3
+
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_AVD_HOME
+
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+[ -z "${XDG_RUNTIME_DIR}" ] && export XDG_RUNTIME_DIR=/run/user/$(id -ru)
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/default
+export JAVA_HOME=/usr/lib/jvm/java-8-jdk
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -31,7 +37,7 @@ export BASH_IT="/home/gibbs/.bash_it"
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='powerline-naked'
+export BASH_IT_THEME='candy'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -80,3 +86,6 @@ fe() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

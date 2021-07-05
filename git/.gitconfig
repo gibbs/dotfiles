@@ -1,3 +1,16 @@
 [user]
 	email = daniel.gibbs@gmail.com
 	name = Dan Gibbs
+[pull]
+	rebase = false
+[cola]
+	spellcheck = false
+	theme = flat-dark-grey
+	icontheme = dark
+	hidpi = 2
+[diff]
+	tool = meld
+[global]
+
+[alias]
+    logcsv = "!git log --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%cd|%h|%an|%s' -200 | while IFS='|' read commit_date hash author message; do printf '%s;%s;%s;%s\n' \"$commit_date\" \"$hash\" \"$author\" \"$message\"; done"

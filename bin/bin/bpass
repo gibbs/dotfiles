@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-shuf -n 4 /usr/share/dict/cracklib-small | tr '\n' '-' && echo ""

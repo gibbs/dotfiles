@@ -3,65 +3,65 @@ command=xtitle -s
 interval=persist
 color=#A6D1FA
 align=left
-separator_block_width=8
+separator_block_width=10
 
 [arch-update]
 command=~/.config/i3blocks/contrib/arch-update/arch-update.py #run arch-update.py -h for options
-label=
+label= 
 interval=3600
 markup=pango
-separator_block_width=8
+separator_block_width=10
 
 [memory]
 command=~/.config/i3blocks/contrib/memory/memory
-label=
+label= 
 interval=30
-separator_block_width=8
+separator_block_width=10
 
 [load_average]
-label=
+label= 
 command=~/.config/i3blocks/contrib/load_average/load_average
 interval=10
-separator_block_width=8
+separator_block_width=10
 
 [disk]
 command=~/.config/i3blocks/contrib/disk/disk
-label=
+label= 
 #instance=/mnt/data
 interval=30
-separator_block_width=8
+separator_block_width=10
 
-[email]
-command=~/.config/i3blocks/contrib/email/email
-interval=300
-min_width=messages:1
-instance=my_mailbox
-separator_block_width=8
-
-[time]
-label=
-instance=%A %d %B %H:%M
-command=~/.config/i3blocks/contrib/time/time
-interval=1
-separator_block_width=8
+#[email]
+#command=~/.config/i3blocks/contrib/email/email
+#interval=300
+#min_width=messages:1
+#instance=my_mailbox
+#separator_block_width=10
 
 [cpu_usage2]
-command=~/.config/i3blocks/contrib/cpu_usage2/cpu_usage2
-label=
+command=~/.config/i3blocks/contrib/cpu_usage/cpu_usage
+label= 
 markup=pango
 interval=persist
-separator_block_width=8
-
-[volume]
-command=~/.config/i3blocks/contrib/volume/volume
-label=
-instance=Master
-interval=once
-signal=10
+separator_block_width=10
 
 [battery2]
 command=~/.config/i3blocks/contrib/battery2/battery2 #run batterybar -h for options
 label=
 interval=5
 markup=pango
-separator_block_width=8
+separator_block_width=10
+
+[time]
+label= 
+command=date '+%a %d %B %H:%M'
+interval=5
+separator_block_width=10
+
+[volume]
+command=~/.config/i3blocks/contrib/volume/volume
+label= 
+instance=Master
+interval=once
+signal=10
+

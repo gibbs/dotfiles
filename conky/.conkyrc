@@ -58,5 +58,7 @@ CPU Usage:$color $cpu%
 ${color4}${cpubar 4}
 File systems: ${color1}
 ${fs_used /}/${fs_size /}
-${color4}${fs_bar 6 /}
+${color4}${fs_bar 6 /}${color1}
+${fs_used /run/media/gibbs/evo}/${fs_size /run/media/gibbs/evo}
+${color4}${fs_bar 6 /run/media/gibbs/evo}
 ]]

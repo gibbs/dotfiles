@@ -49,11 +49,13 @@ from util import *
 # xprop (https://linux.die.net/man/1/xprop). Run `xprop | grep WM_CLASS`
 # then click on the application you want to inspect.
 WINDOW_ICONS = {
+    '1password': fa.icons['lock'],
     'alacritty': fa.icons['terminal'],
     'atom': fa.icons['code'],
     'banshee': fa.icons['play'],
     'blender': fa.icons['cube'],
     'chromium': fa.icons['chrome'],
+    'code': fa.icons['code'],
     'cura': fa.icons['cube'],
     'darktable': fa.icons['image'],
     'discord': fa.icons['comment'],
@@ -68,6 +70,7 @@ WINDOW_ICONS = {
     'firefoxdeveloperedition': fa.icons['firefox'],
     'firefox': fa.icons['firefox'],
     'firefox-esr': fa.icons['firefox'],
+    'gedit': fa.icons['file-alt'],
     'gimp-2.8': fa.icons['image'],
     'gimp-2.10': fa.icons['image'],
     'gnome-control-center': fa.icons['toggle-on'],
@@ -78,6 +81,7 @@ WINDOW_ICONS = {
     'java': fa.icons['code'],
     'jetbrains-idea': fa.icons['code'],
     'jetbrains-studio': fa.icons['code'],
+    'kate': fa.icons['file-alt'],
     'keepassxc': fa.icons['key'],
     'keybase': fa.icons['key'],
     'kicad': fa.icons['microchip'],
@@ -110,6 +114,7 @@ WINDOW_ICONS = {
     'zoom': fa.icons['comment'],
     'terminator': fa.icons['terminal'],
     'dbeaver': fa.icons['database'],
+    'dbeaver-ee': fa.icons['database'],
     'firefoxdeveloperedition': fa.icons['firefox'],
     'files': fa.icons['copy'],
     'hamster-windows-service': fa.icons['user-clock'],
