@@ -1,20 +1,192 @@
-!rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
-rofi.font: Iosevka 18
-rofi.lines: 9
-rofi.eh: 2
-rofi.padding: 200
-rofi.fullscreen: true
-rofi.bw: 0
-!rofi.separator-style: none
-rofi.hide-scrollbar: true
-rofi.sidebar-mode: true
-rofi.terminal: kitty
-rofi.ssh-command: {terminal} -e kitty +kitten {ssh-client} {host}
-rofi.combi-modi:    window,drun,ssh
-rofi.modi:          window,drun,ssh
-!                  'background', 'border', 'separator'
-rofi.color-window: argb:99000000, #7c8389, #1d1f21
-! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-rofi.color-normal: argb:031d1f21, #dddddd, argb:031d1f21, argb:031d1f21, #FFCC00
-rofi.color-urgent: argb:031d1f21, #f3f4f5, argb:bc303541, argb:031d1f21, #FFCC00
-rofi.color-active: argb:031d1f21, #f3f4f5, argb:031d1f21, argb:031d1f21, #FFCC00 
+configuration {
+  font: "IBM Plex Mono 18";
+  modi: "window,drun,ssh";
+  combi-modi: "window,drun,ssh";
+  eh: 2;
+  show-icons: true;
+  sidebar-mode: false;
+  terminal: "kitty";
+  ssh-command: "{terminal}·-e·kitty·+kitten·{ssh-client}·{host}";
+
+  timeout {
+    action: "kb-cancel";
+    delay:  0;
+  }
+  filebrowser {
+    directories-first: true;
+    sorting-method:    "name";
+  }
+}
+
+* {
+  background: rgba(0, 0, 0, 0.8);
+  selected-normal-foreground: rgba(255, 255, 255, 0.75);
+  foreground: rgba(255, 255, 255, 0.8);
+  normal-foreground: @foreground;
+  alternate-normal-background: transparent;
+  red: rgba(220, 50, 47, 100%);
+  selected-urgent-foreground: rgba(249, 249, 249, 100 %);
+  blue: rgba(38, 139, 210, 100 %);
+  urgent-foreground: rgba(204, 102, 102, 100 %);
+  alternate-urgent-background: rgba(75, 81, 96, 90 %);
+  active-foreground: rgba(29, 31, 33, 17 %);
+  lightbg: rgba(238, 232, 213, 100 %);
+  selected-active-foreground: rgba(249, 249, 249, 100 %);
+  alternate-active-background: transparent;
+  alternate-normal-foreground: @foreground;
+  normal-background: transparent;
+  lightfg: rgba(88, 104, 117, 100 %);
+  selected-normal-background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(124, 131, 137, 100 %);
+  spacing: 0;
+  separatorcolor: transparent;
+  urgent-background: rgba(29, 31, 33, 17 %);
+  selected-urgent-background: rgba(165, 66, 66, 100 %);
+  alternate-urgent-foreground: @urgent-foreground;
+  background-color: rgba(0, 0, 0, 0 %);
+  alternate-active-foreground: @active-foreground;
+  active-background: transparent;
+  selected-active-background: rgba(68, 145, 237, 100 %);
+}
+
+window {
+  background-color: @background;
+  border: none;
+  padding: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+mainbox {
+  border: 0;
+  padding: 0;
+}
+
+message {
+  border: 0;
+  border-color: @separatorcolor;
+  padding: 1px;
+}
+
+textbox {
+  text-color: @foreground;
+}
+
+listview {
+  fixed-height: 0;
+  border: 2px 0px 0px;
+  border-color: @separatorcolor;
+  spacing: 2px;
+  scrollbar: true;
+  padding: 0;
+}
+
+element {
+  border: 0;
+  padding: 30px 10px 10px 10px;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+}
+
+element.normal.normal {
+  background-color: @normal-background;
+  text-color: @normal-foreground;
+}
+
+element.normal.urgent {
+  background-color: @urgent-background;
+  text-color: @urgent-foreground;
+}
+
+element.normal.active {
+  background-color: @active-background;
+  text-color: @active-foreground;
+}
+
+element.selected.normal {
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
+}
+
+element.selected.urgent {
+  background-color: @selected-urgent-background;
+  text-color: @selected-urgent-foreground;
+}
+
+element.selected.active {
+  background-color: @selected-active-background;
+  text-color: @selected-active-foreground;
+}
+
+element.alternate.normal {
+  background-color: @alternate-normal-background;
+  text-color: @alternate-normal-foreground;
+}
+
+element.alternate.urgent {
+  background-color: @alternate-urgent-background;
+  text-color: @alternate-urgent-foreground;
+}
+
+element.alternate.active {
+  background-color: @alternate-active-background;
+  text-color: @alternate-active-foreground;
+}
+
+scrollbar {
+  width: 2px;
+  border: 0;
+  handle-color: @normal-foreground;
+  handle-width: 4px;
+  padding: 0;
+}
+
+mode-switcher {
+  border: 2px 0px 0px;
+  border-color: @separatorcolor;
+}
+
+button {
+  spacing: 0;
+  text-color: @normal-foreground;
+}
+
+button.selected {
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
+}
+
+inputbar {
+  spacing: 0;
+  text-color: @normal-foreground;
+  padding: 1px;
+}
+
+case-indicator {
+  spacing: 0;
+  text-color: @normal-foreground;
+}
+
+entry {
+  spacing: 0;
+  text-color: @normal-foreground;
+}
+
+prompt {
+  spacing: 0;
+  text-color: @normal-foreground;
+}
+
+inputbar {
+  children: [ prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  margin: 0;
+  text-color: @normal-foreground;
+}
