@@ -36,7 +36,7 @@ configuration {
   alternate-normal-foreground: @foreground;
   normal-background: transparent;
   lightfg: rgba(88, 104, 117, 100 %);
-  selected-normal-background: rgba(255, 255, 255, 0.2);
+  selected-normal-background: rgba(255, 255, 255, 0.1);
   border-color: rgba(124, 131, 137, 100 %);
   spacing: 0;
   separatorcolor: transparent;
