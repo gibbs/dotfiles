@@ -1,0 +1,50 @@
+{
+  "editor.fontSize": 18,
+  "editor.fontFamily": "'Iosevka Extended', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "window.menuBarVisibility": "toggle",
+  "customizeUI.font.regular": "Iosevka Extended",
+  "customizeUI.font.monospace": "Iosevka Extended",
+  "editor.mouseWheelZoom": true,
+  "tabnine.experimentalAutoImports": true,
+  "workbench.activityBar.visible": false,
+  "editor.rulers": [
+    80, 120
+  ],
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#121417",
+    "statusBar.noFolderBackground": "#212121",
+    "statusBar.debuggingBackground": "#263238"
+  },
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "yaml.schemas": {
+    "file:///home/gibbs/.vscode/extensions/atlassian.atlascode-2.10.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
+  "atlascode.jira.enabled": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "window.zoomLevel": 1,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.list.automaticKeyboardNavigation": false,
+  "redhat.telemetry.enabled": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.colorTheme": "Atom One Darker"
+}

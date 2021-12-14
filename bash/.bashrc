@@ -32,7 +32,7 @@ BROWSER=/usr/bin/chromium
 EDITOR=/usr/bin/vim
 
 # Path to the bash it configuration
-export BASH_IT="/home/gibbs/.bash_it"
+export BASH_IT=~/.bash_it
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -55,6 +55,7 @@ stty -ixon
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 # NVM
