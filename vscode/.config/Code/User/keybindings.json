@@ -3,5 +3,15 @@
   {
     "key": "ctrl+shift+/",
     "command": "wwm.aligncode"
+  },
+  {
+    "key": "ctrl+alt+e",
+    "command": "editor.emmet.action.expandAbbreviation",
+    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.emmet.action.expandAbbreviation",
+    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
   }
 ]

@@ -23,7 +23,7 @@
   },
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "yaml.schemas": {
-    "file:///home/gibbs/.vscode/extensions/atlassian.atlascode-2.10.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/gibbs/.vscode/extensions/atlassian.atlascode-2.10.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
   "atlascode.jira.enabled": false,
@@ -46,5 +46,10 @@
     "jupyter-notebook": "left"
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "Atom One Darker"
+  "workbench.colorTheme": "Atom One Darker",
+  "emmet.triggerExpansionOnTab": true,
+  "files.associations": {
+    "*.njk": "html"
+  },
+  "terminal.integrated.fontSize": 17
 }
