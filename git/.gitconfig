@@ -1,6 +1,7 @@
 [user]
   email = daniel.gibbs@gmail.com
   name = Dan Gibbs
+  signingkey = FCBE57CC58390A09
 [pull]
   rebase = false
 [diff]

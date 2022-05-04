@@ -9,11 +9,9 @@
 export PATH="$PATH:${HOME}/.gem/ruby/2.7.2/bin:${HOME}/bin:$HOME/.config/composer/vendor/bin:${HOME}/.local/bin"
 export ELECTRON_TRASH=gio
 export FBFONT=/usr/share/kbd/consolefonts/ter-216n.psf.gz
-
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_SCALE_FACTOR=1.3
-
+export GOPATH="/home/gibbs/go/"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_AVD_HOME
+export PARALLEL_TEST_PROCESSORS=8
 
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 [ -z "${XDG_RUNTIME_DIR}" ] && export XDG_RUNTIME_DIR=/run/user/$(id -ru)

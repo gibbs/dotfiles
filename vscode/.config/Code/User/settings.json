@@ -23,7 +23,7 @@
   },
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "yaml.schemas": {
-    "file:///home/gibbs/.vscode/extensions/atlassian.atlascode-2.10.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/gibbs/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
   "atlascode.jira.enabled": false,
@@ -51,5 +51,10 @@
   "files.associations": {
     "*.njk": "html"
   },
-  "terminal.integrated.fontSize": 17
+  "terminal.integrated.fontSize": 17,
+  "search.exclude": {
+    "**/docs/": true
+  },
+  "go.gopath": "/home/gibbs/go/",
+  "workbench.startupEditor": "none"
 }
