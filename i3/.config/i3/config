@@ -226,10 +226,10 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 bar {
     modifier None
     status_command i3blocks
-    font pango: Iosevka Extended Regular 10
+    font pango: Consolas Regular 11
     i3bar_command i3bar --transparency
     position top
-    height 24
+    height 26
 
     colors {
         background $bg-color

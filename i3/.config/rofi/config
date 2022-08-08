@@ -1,5 +1,5 @@
 configuration {
-  font: "IBM Plex Mono 18";
+  font: "IBM Plex Sans 14";
   modi: "window,drun,ssh";
   combi-modi: "window,drun,ssh";
   eh: 2;
@@ -7,11 +7,13 @@ configuration {
   sidebar-mode: false;
   terminal: "kitty";
   ssh-command: "{terminal}·-e·kitty·+kitten·{ssh-client}·{host}";
+  icon-theme: "Qogir";
 
   timeout {
     action: "kb-cancel";
     delay:  0;
   }
+
   filebrowser {
     directories-first: true;
     sorting-method:    "name";
@@ -60,6 +62,7 @@ window {
 mainbox {
   border: 0;
   padding: 0;
+  children: [ inputbar, listview ];
 }
 
 message {
@@ -73,6 +76,8 @@ textbox {
 }
 
 listview {
+  layout: vertical;
+  dynamic: true;
   fixed-height: 0;
   border: 2px 0px 0px;
   border-color: @separatorcolor;
@@ -83,13 +88,19 @@ listview {
 
 element {
   border: 0;
-  padding: 30px 10px 10px 10px;
-  background-color: #ff9900;
+  padding: 10px;
 }
 
 element-text {
-  background-color: transparent;
   text-color: inherit;
+  position: center;
+  vertical-align: 0.5;
+  font: "IBM Plex Sans 20";
+}
+
+element-icon {
+  padding: 0 10px;
+  size: 48px;
 }
 
 element.normal.normal {
@@ -163,7 +174,7 @@ button.selected {
 inputbar {
   spacing: 0;
   text-color: @normal-foreground;
-  padding: 1px;
+  padding: 10px;
 }
 
 case-indicator {

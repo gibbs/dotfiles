@@ -5,7 +5,7 @@
     "command": "wwm.aligncode"
   },
   {
-    "key": "ctrl+alt+e",
+    "key": "ctrl+enter",
     "command": "editor.emmet.action.expandAbbreviation",
     "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
   },
@@ -13,5 +13,13 @@
     "key": "tab",
     "command": "-editor.emmet.action.expandAbbreviation",
     "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "terminal.focus"
+  },
+  {
+    "key": "alt+t",
+    "command": "workbench.action.focusActiveEditorGroup"
   }
 ]

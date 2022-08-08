@@ -56,5 +56,12 @@
     "**/docs/": true
   },
   "go.gopath": "/home/gibbs/go/",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "svelte.enable-ts-plugin": true,
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false
+  }
 }
