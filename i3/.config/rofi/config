@@ -1,5 +1,5 @@
 configuration {
-  font: "IBM Plex Sans 14";
+  font: "IBM Plex Sans 26";
   modi: "window,drun,ssh";
   combi-modi: "window,drun,ssh";
   eh: 2;
@@ -95,12 +95,12 @@ element-text {
   text-color: inherit;
   position: center;
   vertical-align: 0.5;
-  font: "IBM Plex Sans 20";
+  font: "IBM Plex Sans 32";
 }
 
 element-icon {
-  padding: 0 10px;
-  size: 48px;
+  padding: 0 20px;
+  size: 96px;
 }
 
 element.normal.normal {
@@ -149,15 +149,15 @@ element.alternate.active {
 }
 
 scrollbar {
-  width: 2px;
+  width: 4px;
   border: 0;
   handle-color: @normal-foreground;
-  handle-width: 4px;
+  handle-width: 8px;
   padding: 0;
 }
 
 mode-switcher {
-  border: 2px 0px 0px;
+  border: 4px 0px 0px;
   border-color: @separatorcolor;
 }
 

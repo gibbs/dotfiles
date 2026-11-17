@@ -17,7 +17,13 @@ export XDG_RUNTIME_DIR=/run/user/$(id -u)
 [ -z "${XDG_RUNTIME_DIR}" ] && export XDG_RUNTIME_DIR=/run/user/$(id -ru)
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-8-jdk
+#export JAVA_HOME=/usr/lib/jvm/java-8-jdk
+export ANDROID_HOME=$HOME/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+
+export GDK_SCALE=2
+export GDK_DPI_SCALE=1
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -88,3 +94,16 @@ fe() {
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+source /usr/share/nvm/init-nvm.sh
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/gibbs/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

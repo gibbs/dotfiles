@@ -7,14 +7,14 @@ separator_block_width=10
 
 [arch-update]
 command=~/.config/i3blocks/contrib/arch-update/arch-update.py #run arch-update.py -h for options
-label= 
+label= 
 interval=3600
 markup=pango
 separator_block_width=10
 
 [memory]
 command=~/.config/i3blocks/contrib/memory/memory
-label= 
+label= 
 interval=30
 separator_block_width=10
 
@@ -26,7 +26,7 @@ separator_block_width=10
 
 [disk]
 command=~/.config/i3blocks/contrib/disk/disk
-label= 
+label= 
 #instance=/mnt/data
 interval=30
 separator_block_width=10
