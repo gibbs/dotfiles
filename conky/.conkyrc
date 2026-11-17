@@ -1,3 +1,6 @@
+-- Wayland (sway) draws on the background layer, X11 (i3) uses an override window
+local wayland = os.getenv('WAYLAND_DISPLAY') ~= nil
+
 conky.config = {
   -- Colors
   default_color          = '#5294e2',
@@ -29,10 +32,11 @@ conky.config = {
   out_to_console         = false,
   out_to_ncurses         = false,
   out_to_stderr          = false,
-  out_to_x               = true,
+  out_to_x               = not wayland,
+  out_to_wayland         = wayland,
   own_window             = true,
   own_window_class       = 'Conky',
-  own_window_type        = 'override',
+  own_window_type        = wayland and 'desktop' or 'override',
   own_window_transparent = true,
   show_graph_range       = false,
   show_graph_scale       = false,

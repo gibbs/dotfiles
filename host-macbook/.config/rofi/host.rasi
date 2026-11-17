@@ -1,0 +1,4 @@
+/*
+ * MacBook (sway): the compositor scales the Retina panel, so the base
+ * sizes in config are used as-is.
+ */

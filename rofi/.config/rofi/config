@@ -1,5 +1,5 @@
 configuration {
-  font: "IBM Plex Sans 26";
+  font: "IBM Plex Sans 14";
   modi: "window,drun,ssh";
   combi-modi: "window,drun,ssh";
   eh: 2;
@@ -95,12 +95,12 @@ element-text {
   text-color: inherit;
   position: center;
   vertical-align: 0.5;
-  font: "IBM Plex Sans 32";
+  font: "IBM Plex Sans 20";
 }
 
 element-icon {
-  padding: 0 20px;
-  size: 96px;
+  padding: 0 10px;
+  size: 48px;
 }
 
 element.normal.normal {
@@ -149,10 +149,10 @@ element.alternate.active {
 }
 
 scrollbar {
-  width: 4px;
+  width: 2px;
   border: 0;
   handle-color: @normal-foreground;
-  handle-width: 8px;
+  handle-width: 4px;
   padding: 0;
 }
 
@@ -202,3 +202,6 @@ textbox-prompt-colon {
   margin: 0;
   text-color: @normal-foreground;
 }
+
+/* Host specific sizes (host-* stow packages provide host.rasi) */
+@import "host.rasi"

@@ -1,0 +1,21 @@
+/*
+ * Linux workstation (i3/X11): no compositor scaling on the HiDPI panel,
+ * so sizes are doubled here.
+ */
+configuration {
+  font: "IBM Plex Sans 26";
+}
+
+element-text {
+  font: "IBM Plex Sans 32";
+}
+
+element-icon {
+  padding: 0 20px;
+  size: 96px;
+}
+
+scrollbar {
+  width: 4px;
+  handle-width: 8px;
+}

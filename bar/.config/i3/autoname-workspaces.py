@@ -10,9 +10,10 @@
 # between monitors (leaving a gap for a new workspace to be created). By
 # default, i3 workspace numbers are sticky, so they quickly get out of order.
 #
+# Works with i3 (X11) and sway (Wayland).
+#
 # Dependencies
-# * xorg-xprop  - install through system package manager
-# * i3ipc       - install with pip
+# * i3ipc       - python-i3ipc (pacman) or pip
 # * fontawesome - install with pip
 #
 # Installation:
@@ -39,15 +40,15 @@ import fontawesome as fa
 from util import *
 
 # Add icons here for common programs you use.  The keys are the X window class
-# (WM_CLASS) names (lower-cased) and the icons can be any text you want to
-# display.
+# (WM_CLASS) or, for native Wayland windows under sway, the app_id
+# (lower-cased). The icons can be any text you want to display.
 #
 # Most of these are character codes for font awesome:
 #   http://fortawesome.github.io/Font-Awesome/icons/
 #
-# If you're not sure what the WM_CLASS is for your application, you can use
-# xprop (https://linux.die.net/man/1/xprop). Run `xprop | grep WM_CLASS`
-# then click on the application you want to inspect.
+# To find the key for an application:
+#   i3:   xprop | grep WM_CLASS (then click the window)
+#   sway: swaymsg -t get_tree | grep -E '"(app_id|class)"'
 WINDOW_ICONS = {
     '1password': fa.icons['lock'],
     'alacritty': fa.icons['terminal'],
@@ -128,7 +129,34 @@ WINDOW_ICONS = {
     'org.gnome.DejaDup': fa.icons['archive'],
     'org.gnome.Nautilus': fa.icons['copy'],
     'virtualbox manager': fa.icons['laptop'],
-    'virtualbox machine': fa.icons['laptop']
+    'virtualbox machine': fa.icons['laptop'],
+
+    # Wayland app_ids (sway)
+    'bitwarden': fa.icons['key'],
+    'code-url-handler': fa.icons['code'],
+    'deluge': fa.icons['download'],
+    'gimp': fa.icons['image'],
+    'gparted': fa.icons['hdd'],
+    'libreoffice-writer': fa.icons['file-alt'],
+    'libreoffice-startcenter': fa.icons['file-alt'],
+    'org.gnome.baobab': fa.icons['chart-pie'],
+    'org.gnome.calculator': fa.icons['calculator'],
+    'org.gnome.calendar': fa.icons['calendar'],
+    'org.gnome.eog': fa.icons['image'],
+    'org.gnome.evince': fa.icons['file-pdf'],
+    'org.gnome.evolution': fa.icons['envelope'],
+    'org.gnome.fileroller': fa.icons['compress'],
+    'org.gnome.font-viewer': fa.icons['font'],
+    'org.gnome.gedit': fa.icons['file-alt'],
+    'org.gnome.meld': fa.icons['code-branch'],
+    'org.gnome.rhythmbox3': fa.icons['play'],
+    'org.gnome.seahorse.application': fa.icons['key'],
+    'org.gnome.settings': fa.icons['toggle-on'],
+    'org.gnome.terminal': fa.icons['terminal'],
+    'org.mozilla.thunderbird': fa.icons['envelope'],
+    'org.pulseaudio.pavucontrol': fa.icons['volume-up'],
+    'org.zealdocs.zeal': fa.icons['book'],
+    'vlc': fa.icons['play'],
 }
 
 # This icon is used for any application not in the list above
@@ -146,15 +174,14 @@ def ensure_window_icons_lowercase():
 
 
 def icon_for_window(window):
-    # Try all window classes and use the first one we have an icon for
-    classes = xprop(window.window, 'WM_CLASS')
-    if classes != None and len(classes) > 0:
-        for cls in classes:
-            cls = cls.lower()  # case-insensitive matching
-            if cls in WINDOW_ICONS:
-                return WINDOW_ICONS[cls]
-    logging.info(
-        'No icon available for window with classes: %s' % str(classes))
+    # Wayland windows (sway) only have an app_id, X11/XWayland windows have
+    # the WM_CLASS class and instance. Use the first one with an icon.
+    names = [window.app_id, window.window_class, window.window_instance]
+    names = [n.lower() for n in names if n]
+    for name in names:
+        if name in WINDOW_ICONS:
+            return WINDOW_ICONS[name]
+    logging.info('No icon available for window: %s' % str(names))
     return DEFAULT_ICON
 
 

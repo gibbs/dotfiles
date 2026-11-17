@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# i3blocks: default sink volume via pamixer (PipeWire/PulseAudio).
+# Replaces the amixer based contrib script, which cannot find the PipeWire
+# "Master" control. Refresh with: pkill -RTMIN+10 i3blocks
+#
+# Click: left = pavucontrol, right = mute, scroll = +/- 5%
+
+case "${BLOCK_BUTTON:-}" in
+  1) setsid -f pavucontrol >/dev/null 2>&1 ;;
+  3) pamixer -t ;;
+  4) pamixer -i 5 ;;
+  5) pamixer -d 5 ;;
+esac
+
+if [[ "$(pamixer --get-mute)" == "true" ]]; then
+  echo "muted"
+  echo "muted"
+  echo "#777777"
+else
+  volume="$(pamixer --get-volume)%"
+  echo "$volume"
+  echo "$volume"
+fi

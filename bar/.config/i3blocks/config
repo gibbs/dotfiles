@@ -1,5 +1,5 @@
 [focused window]
-command=xtitle -s
+command=~/.config/i3blocks/scripts/focused-window
 interval=persist
 color=#A6D1FA
 align=left

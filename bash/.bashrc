@@ -10,7 +10,6 @@ export PATH="$PATH:${HOME}/.gem/ruby/2.7.2/bin:${HOME}/bin:$HOME/.config/compose
 export ELECTRON_TRASH=gio
 export FBFONT=/usr/share/kbd/consolefonts/ter-216n.psf.gz
 export GOPATH="/home/gibbs/go/"
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_AVD_HOME
 export PARALLEL_TEST_PROCESSORS=8
 
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
@@ -18,12 +17,7 @@ export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 # Java
 #export JAVA_HOME=/usr/lib/jvm/java-8-jdk
-export ANDROID_HOME=$HOME/android-sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-
-export GDK_SCALE=2
-export GDK_DPI_SCALE=1
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -94,16 +88,22 @@ fe() {
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-source /usr/share/nvm/init-nvm.sh
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/home/gibbs/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Host specific config (host-* stow packages)
+for f in ~/.bashrc.d/*.sh; do
+  [ -r "$f" ] && source "$f"
+done
+unset f

@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+#
+# i3blocks: title of the focused window (interval=persist).
+# Uses the i3/sway IPC so it works on X11 and Wayland (replaces xtitle).
+import i3ipc
+
+MAX_LENGTH = 80
+
+
+def show(i3, _event=None):
+    focused = i3.get_tree().find_focused()
+    title = focused.name if focused and focused.type in ('con', 'floating_con') else ''
+    title = title or ''
+    if len(title) > MAX_LENGTH:
+        title = title[:MAX_LENGTH - 1] + '…'
+    print(title, flush=True)
+
+
+i3 = i3ipc.Connection()
+show(i3)
+for event in ('window::focus', 'window::title', 'window::close', 'workspace::focus'):
+    i3.on(event, show)
+i3.main()

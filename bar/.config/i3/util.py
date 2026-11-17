@@ -1,8 +1,6 @@
 # github.com/justbuchanan/i3scripts
 
 import re
-import logging
-import subprocess as proc
 from collections import namedtuple, Counter
 
 # A type that represents a parsed workspace "name".
@@ -19,7 +17,7 @@ def focused_workspace(i3):
 # * 'icons' - the string that comes after the
 # Any field that's missing will be None in the returned dict
 def parse_workspace_name(name):
-    m = re.match('(?P<num>\d+):?(?P<shortname>\w+)? ?(?P<icons>.+)?',
+    m = re.match(r'(?P<num>\d+):?(?P<shortname>\w+)? ?(?P<icons>.+)?',
                  name).groupdict()
     return NameParts(**m)
 
@@ -38,19 +36,6 @@ def construct_workspace_name(parts):
             new_name += ' ' + parts.icons
 
     return new_name
-
-
-# Return an array of values for the X property on the given window.
-# Requires xorg-xprop to be installed.
-def xprop(win_id, property):
-    try:
-        prop = proc.check_output(
-            ['xprop', '-id', str(win_id), property], stderr=proc.DEVNULL)
-        prop = prop.decode('utf-8')
-        return re.findall('"([^"]*)"', prop)
-    except proc.CalledProcessError as e:
-        logging.warn("Unable to get property for window '%d'" % win_id)
-        return None
 
 
 # Unicode subscript and superscript numbers

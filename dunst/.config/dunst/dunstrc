@@ -2,7 +2,7 @@
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
-    monitor = 1
+    monitor = 0
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -15,9 +15,12 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    # "mouse" is X11 only; keyboard works on X11 and Wayland
+    follow = keyboard
 
-    # The geometry of the window:
+    # Window size and position (replaces the removed "geometry" option):
+    #   width, height = (min, max), origin = corner, offset = (x, y)
+    # Legacy geometry notes:
     #   [{width}]x{height}[+/-{x}+/-{y}]
     # The geometry of the message window.
     # The height is measured in number of notifications everything else
@@ -29,24 +32,18 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "600x5-0+20"
+    width = 600
+    height = (0, 300)
+    origin = top-right
+    offset = (0, 20)
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
-
-    # Shrink window if it's smaller than the width.  Will be ignored if
-    # width is 0.
-    shrink = no
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
     transparency = 5
-
-    # The height of the entire notification.  If the height is smaller
-    # than the font height and padding combined, it will be raised
-    # to the font height and padding.
-    notification_height = 0
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -166,7 +163,8 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_theme = Qogir
+    enable_recursive_icon_lookup = true
 
     ### History ###
 
@@ -180,7 +178,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -dmenu -p dunst
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/firefox -new-tab
